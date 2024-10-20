@@ -1137,7 +1137,7 @@ textarea.form-control {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  /* background-image: url(../img/banner/banner-bg-1.jpg); */
+  background-image: url(../img/banner/banner-bg-1.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1227,51 +1227,44 @@ textarea.form-control {
   background: #fff;
   padding: unset;
 }
-
+.banner-three.home-banner-area::before {
+  background: unset;
+  background: none;
+}
 .banner-three .banner-content .cta-btn {
   margin: unset;
 }
-
-.banner-three .banner-slider .slider-item {
-  position: relative; /* To stack content on top of the image */
-  overflow: hidden; /* Hide overflow if the image is larger */
-}
-
-.banner-three .banner-slider .slider-item img {
-  width: 100%; /* Full width of the slider item */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Prevent inline spacing */
-  object-fit: cover; /* Ensure image covers the area */
-  position: absolute; /* Position to cover the item */
-  top: 0;
-  left: 0;
-  z-index: 1; /* Ensure the image is behind the content */
-}
-
-.banner-three .banner-slider .slider-item .container {
-  position: relative; /* To place the content above the image */
-  z-index: 2; /* Content should be above the image */
-}
-
-/* Optional - to create the overlay effect */
-.banner-three .banner-slider .slider-item::before {
+.banner-three .banner-slider .owl-item::before {
   content: "";
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 30, 76, 0.62); /* Adjust the color as necessary */
+  background: rgba(0, 30, 76, 0.62);
 }
-
-/* Animation rules */
-.banner-three .owl-item.active h1,
-.banner-three .owl-item.active p,
+.banner-three .banner-slider .owl-item:nth-child(1) {
+  background: url(../img/banner/banner-slider-1.jpg) no-repeat center;
+  background-size: cover;
+}
+.banner-three .banner-slider .owl-item:nth-child(2) {
+  background: url(../img/banner/banner-slider-2.jpg) no-repeat center;
+  background-size: cover;
+}
+.banner-three .banner-slider .owl-item:nth-child(3) {
+  background: url(../img/banner/banner-slider-3.jpg) no-repeat center;
+  background-size: cover;
+}
+.banner-three .owl-item.active h1 {
+  animation: fadeInDown 2s both 1;
+}
+.banner-three .owl-item.active p {
+  animation: fadeIn 2s both 1;
+}
 .banner-three .owl-item.active .cta-btn {
-  animation: fadeIn 2s both 1; /* Combine animations as needed */
+  animation: fadeInUp 2s both 1;
 }
-
 .banner-three .owl-carousel .owl-dots {
   text-align: center;
   position: absolute;
@@ -1281,7 +1274,6 @@ textarea.form-control {
   align-items: center;
   transform: translateX(-50%);
 }
-
 .banner-three .owl-carousel .owl-dots .owl-dot {
   display: inline-block;
   width: 6px;
@@ -1291,12 +1283,10 @@ textarea.form-control {
   background: #ffffff;
   transition: 0.5s;
 }
-
 .banner-three .owl-carousel .owl-dots .owl-dot.active {
   height: 45px;
   background: #ffbc13;
 }
-
 
 /* -----------------------------------------
  About CSS

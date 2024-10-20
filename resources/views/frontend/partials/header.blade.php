@@ -52,8 +52,8 @@
                 <div class="constik-responsive-menu">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="frontend/assets/img/logo-dark.png" class="logo1" alt="logo">
-                            <img src="frontend/assets/img/logo.png" class="logo2" alt="logo">
+                            <img src="frontend/assets/img/g-logo.png" class="logo1" alt="logo">
+                            <img src="frontend/assets/img/g-logo.png" class="logo2" alt="logo">
                         </a>
                     </div>
                     <div class="side-option-responsive">
@@ -110,7 +110,7 @@
                 <nav class="navbar navbar-expand-md navbar-light">
                     <div class="collapse navbar-collapse mean-menu">
                         <a href="index.html" class="navbar-brand">
-                            <img src="frontend/assets/img/logo.png" alt="Logo">
+                            <img src="frontend/assets/img/g-logo.png" alt="Logo">
                         </a>
                         <ul class="navbar-nav">
                             <li class="nav-item">
@@ -131,10 +131,10 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link toggle">About Us</a>
+                                <a href="#" class="nav-link toggle">@lang('messages.About')</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="about-us.html" class="nav-link">@lang('messages.Projects')</a>
+                                        <a href="about-us.html" class="nav-link">test</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="team-members.html" class="nav-link">Team Members</a>
@@ -157,7 +157,7 @@
                                 </ul>
                             </li>
 
-                            <li class="nav-item"><a href="#" class="nav-link toggle">Blog</a>
+                            <li class="nav-item"><a href="#" class="nav-link toggle">@lang('messages.Blog')</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="blog-grid.html" class="nav-link">Blog Grid</a>
@@ -168,7 +168,7 @@
                                 </ul>
                             </li>
 
-                            <li class="nav-item"><a href="#" class="nav-link toggle">Pages</a>
+                            <li class="nav-item"><a href="#" class="nav-link toggle">@lang('messages.Projects')</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="pricing.html" class="nav-link">Pricing</a>
@@ -208,7 +208,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="contact.html" class="nav-link">Contact</a>
+                                <a href="contact.html" class="nav-link">@lang('messages.Contact')</a>
                             </li>
                         </ul>
 
@@ -250,7 +250,7 @@
 
                             <div class="item">
                                 <div class="cta-btn">
-                                    <a href="faq.html" class="primary-btn">Request Quote</a>
+                                    <a href="faq.html" class="primary-btn">@lang('messages.RequestQuote')</a>
                                 </div>
                             </div>
                         </div>

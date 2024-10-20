@@ -1256,7 +1256,7 @@ textarea.form-control {
   position: relative;
   overflow: hidden;
   z-index: 1;
-//   background-image: url(../img/banner/banner-bg-1.jpg);
+  background-image: url(../img/banner/banner-bg-1.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1325,7 +1325,7 @@ textarea.form-control {
 
 .banner-two{
 	padding-top: 152px;
-//   background-image: url(../img/banner/banner-bg-2.jpg);
+  background-image: url(../img/banner/banner-bg-2.jpg);
   &::before{
 	content: '';
 	position: absolute;
