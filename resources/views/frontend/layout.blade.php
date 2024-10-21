@@ -64,11 +64,6 @@
         @endif
     </head>
     <body>
-        <!-- start preloader area-->
-        <div class="preloader-main">
-            <span class="loader"> </span>
-        </div>
-        <!--end preloader area -->
 
         @include('frontend.partials.header')
 
@@ -109,23 +104,23 @@
                         <ul class="footer-links">
                             <li>
                                 <i class="flaticon-play-button"></i>
-                                <a href="about-us.html">About Us</a>
+                                <a href="about-us.html">@lang('messages.About')</a>
                             </li>
                             <li>
                                 <i class="flaticon-play-button"></i>
-                                <a href="services-grid.html">Services</a>
+                                <a href="services-grid.html">@lang('messages.Services')</a>
                             </li>
                             <li>
                                 <i class="flaticon-play-button"></i>
-                                <a href="projects.html">Projects</a>
+                                <a href="projects.html">@lang('messages.Projects')</a>
                             </li>
                             <li>
                                 <i class="flaticon-play-button"></i>
-                                <a href="services-details.html">Services Details</a>
+                                <a href="services-details.html">@lang('messages.FAQ')</a>
                             </li>
                             <li>
                                 <i class="flaticon-play-button"></i>
-                                <a href="terms-of-service.html">Terms & Conditions</a>
+                                <a href="terms-of-service.html">@lang('messages.PrivacyPolicy')</a>
                             </li>
                         </ul>
                     </div>
