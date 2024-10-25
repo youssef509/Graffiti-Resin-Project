@@ -16,8 +16,8 @@ Route::get('/', function () {
 // Routes For The Back-End (Admin Panel).
 Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/', function () {
-        return view('admin.index');
-    });
+        return view('backend.index');
+    })->name('backend.index');
 });
 
 Route::get('/dashboard', function () {
