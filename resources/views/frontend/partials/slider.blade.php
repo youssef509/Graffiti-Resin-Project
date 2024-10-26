@@ -1,5 +1,5 @@
 <!-- start home banner area -->
-<div class="home-banner-area banner-two">
+<div class="home-banner-area banner-two" style="background-image: url(frontend/assets/img/banner/banner-bg-1.jpg);">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-sm-12 ">

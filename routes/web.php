@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Admin\Home\SliderController;
+use App\Http\Controllers\Admin\Home\SliderControllerAR;
 
 Route::fallback(function () {
     return view('frontend.error.404');
@@ -18,10 +18,12 @@ Route::get('/', function () {
 Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('backend.index');
     Route::prefix('slider')->group(function() {
-        Route::get('/', [SliderController::class, 'index'])->name('admin.slider');
+        Route::get('/', [SliderControllerAR::class, 'index'])->name('admin.slider');
+        Route::post('/', [SliderControllerAR::class, 'store'])->name('admin.slider-storeAr');
     });
     Route::prefix('slider')->group(function() {
-        Route::get('/', [SliderController::class, 'index'])->name('admin.slider');
+        Route::get('/', [SliderControllerAR::class, 'index'])->name('admin.slider');
+
     });
 });
 
