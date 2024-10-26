@@ -4,7 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\LocaleController;
-
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\Home\SliderController;
 
 Route::fallback(function () {
     return view('frontend.error.404');
@@ -15,9 +16,13 @@ Route::get('/', function () {
 
 // Routes For The Back-End (Admin Panel).
 Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
-    Route::get('/', function () {
-        return view('backend.index');
-    })->name('backend.index');
+    Route::get('/', [AdminController::class, 'index'])->name('backend.index');
+    Route::prefix('slider')->group(function() {
+        Route::get('/', [SliderController::class, 'index'])->name('admin.slider');
+    });
+    Route::prefix('slider')->group(function() {
+        Route::get('/', [SliderController::class, 'index'])->name('admin.slider');
+    });
 });
 
 Route::get('/dashboard', function () {

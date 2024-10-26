@@ -17,7 +17,7 @@
         <link href="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
 
         <!-- preloader css -->
-        <link rel="stylesheet" href="{{ asset('backend/assets/css/preloader-rtl.min.css" type="text/css')}}" />
+        <link rel="stylesheet" href="{{ asset('backend/assets/css/preloader-rtl.min.css')}}" type="text/css" />
 
         <!-- Bootstrap Css -->
         <link href="{{ asset('backend/assets/css/bootstrap-rtl.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -37,7 +37,7 @@
         <!-- Begin page -->
         <div id="layout-wrapper-rtl">
 
-            
+
             <header id="page-topbar">
                 <div class="navbar-header">
                     <div class="d-flex">
@@ -66,7 +66,7 @@
                             <i class="fa fa-fw fa-bars"></i>
                         </button>
 
-                        
+
                     </div>
 
                     <div class="d-flex">
@@ -125,14 +125,14 @@
                             </li>
 
                             <li class="menu-title" data-key="t-apps">الصفحات</li>
-                
+
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i data-feather="home"></i>
                                     <span data-key="t-home">الصفحة الرئيسية</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="" key="t-slider">الاسليدر</a></li>
+                                    <li><a href="{{route('admin.slider')}}" key="t-slider">الاسليدر</a></li>
                                     {{-- <li><a href="" data-key="">العناصر</a></li> --}}
                                     <li><a href="" data-key="about">من نحن</a></li>
                                     {{-- <li><a href="" data-key="">الانجازات</a></li> --}}
@@ -154,8 +154,8 @@
                                 </ul>
                             </li>
 
-                           
-                
+
+
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i data-feather="briefcase"></i>
@@ -238,7 +238,7 @@
                             </li>
                         </ul>
 
-                        
+
                     </div>
                     <!-- Sidebar -->
                 </div>
@@ -268,10 +268,10 @@
     </div>
     <!-- END layout-wrapper -->
 
-    
-    
 
-   
+
+
+
 
     <!-- JAVASCRIPT -->
     <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js')}}"></script>
@@ -283,7 +283,7 @@
     <!-- pace js -->
     <script src="{{ asset('backend/assets/libs/pace-js/pace.min.js')}}"></script>
 
-    
+
     <!-- apexcharts -->
     <script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 

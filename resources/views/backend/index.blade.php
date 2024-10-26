@@ -4,7 +4,8 @@
    لوحة التحكم
 @endsection
 
+
+
 @section('page-content')
-            
+
 @endsection
-               

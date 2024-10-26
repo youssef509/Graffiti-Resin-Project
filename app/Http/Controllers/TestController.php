@@ -19,3 +19,4 @@ class TestController extends Controller
         return view('testlang', ['data' => $data, 'lang' => $lang]);
     }
 }
+
