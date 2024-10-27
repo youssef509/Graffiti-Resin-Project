@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('Ar_slider', function (Blueprint $table) {
             $table->id();
-            $table->string('Ar_text1');
-            $table->string('Ar_text2');
-            $table->text('Ar_button_text');
-            $table->string('Ar_button_url');
-            $table->string('Ar_image');
+            $table->string('text1');
+            $table->string('text2');
+            $table->text('button_text');
+            $table->string('button_url');
+            $table->string('image');
             $table->timestamps();
         });
     }

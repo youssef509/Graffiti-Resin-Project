@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class SliderEn extends Model
 {
     protected $fillable = [
-        'En_text1',
-        'En_text2',
-        'En_button_text',
-        'En_button_url',
-        'En_image'
+        'text1',
+        'text2',
+        'button_text',
+        'button_url',
+        'image'
     ];
 
     // Specify the table name explicitly

@@ -1,21 +1,23 @@
 <!-- start home banner area -->
-<div class="home-banner-area banner-two" style="background-image: url(frontend/assets/img/banner/banner-bg-1.jpg);">
+@foreach($sliderData as $slider)
+<div class="home-banner-area banner-two" style="background-image: url('{{ $slider->image_url }}');">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-sm-12 ">
                 <div class="banner-content">
                     <h1>
-                        We Are The World's Best <span>Dream</span> Builders
+                        {{$slider->text1}}
                     </h1>
                     <p>
-                        You can dream, create, design, and build the most wonderful place in the world. But it requires people to make the dream a reality.
+                        {{$slider->text2}}
                     </p>
                     <div class="cta-btn">
-                        <a href="services-grid.html" class="primary-btn">Explore Services</a>
+                        <a href="{{$slider->button_url}}" class="primary-btn">{{$slider->button_text}}</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endforeach
 <!-- end home banner area -->

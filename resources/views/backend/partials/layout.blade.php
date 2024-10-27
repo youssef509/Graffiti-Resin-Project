@@ -132,7 +132,7 @@
                                     <span data-key="t-home">الصفحة الرئيسية</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{route('admin.slider')}}" key="t-slider">الاسليدر</a></li>
+                                    <li><a href="{{route('admin.slider-Ar')}}" key="t-slider">الاسليدر</a></li>
                                     {{-- <li><a href="" data-key="">العناصر</a></li> --}}
                                     <li><a href="" data-key="about">من نحن</a></li>
                                     {{-- <li><a href="" data-key="">الانجازات</a></li> --}}

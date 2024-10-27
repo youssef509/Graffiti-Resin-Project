@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
     "Home" => "Home",
@@ -17,4 +17,5 @@ return [
     "OOPS" => "OOPS!",
     "error404" => "error 404! page Not Found",
     "Backtohomepage" => "Back to homepage",
+    "HomeAboutUs" => "About Graffiti Resin Company",
 ];

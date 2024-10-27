@@ -23,13 +23,13 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-pills nav-justified" role="tablist">
                                 <li class="nav-item waves-effect waves-light">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#arabic-1" role="tab">
+                                    <a class="nav-link"  href="{{route('admin.slider-Ar')}}" role="tab">
                                         <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
                                         <span class="d-none d-sm-block">العربية</span>
                                     </a>
                                 </li>
                                 <li class="nav-item waves-effect waves-light">
-                                    <a class="nav-link" href="{{route('admin.slider-En')}}" role="tab">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#english-1" role="tab">
                                         <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
                                         <span class="d-none d-sm-block">English</span>
                                     </a>
@@ -45,49 +45,49 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <div class="tab-content p-3 text-muted">
-                                    <div class="tab-pane active" id="arabic-1" role="tabpanel">
-                                        <form method="POST" action="{{ $slider ? route('admin.slider-updateAr', $slider->id) : route('admin.slider-storeAr') }}"  enctype="multipart/form-data">
-                                            @csrf
-                                            @if($slider)
-                                                @method('PUT')
-                                            @endif
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div>
-                                                        <div class="mb-3">
-                                                            <label for="example-text-input" class="form-label">النص الاول</label>
-                                                            <input name="text1" value="{{ $slider ? $slider->text1 : old('text1') }}" class="form-control" type="text">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="example-text-input" class="form-label">نص الزر</label>
-                                                            <input name="button_text" value="{{ $slider ? $slider->button_text : old('button_text') }}" class="form-control" type="text">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="formFile" class="form-label">الصورة</label>
-                                                            <input name="image" class="form-control" type="file" id="formFile">
+                                    <div class="tab-content p-3 text-muted">
+                                        <div class="tab-pane active" id="english-1" role="tabpanel">
+                                            <form method="POST" action="{{ $slider ? route('admin.slider-updateEn', $slider->id) : route('admin.slider-storeEn') }}"  enctype="multipart/form-data">
+                                                @csrf
+                                                @if($slider)
+                                                    @method('PUT')
+                                                @endif
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div>
+                                                            <div class="mb-3">
+                                                                <label for="example-text-input" class="form-label">النص الاول</label>
+                                                                <input name="text1" value="{{ $slider ? $slider->text1 : old('text1') }}" class="form-control" type="text">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="example-text-input" class="form-label">نص الزر</label>
+                                                                <input name="button_text" value="{{ $slider ? $slider->button_text : old('button_text') }}" class="form-control" type="text">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="formFile" class="form-label">الصورة</label>
+                                                                <input name="image" class="form-control" type="file" id="formFile">
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="example-text-input" class="form-label">النص الثاني</label>
-                                                        <input  name="text2" value="{{ $slider ? $slider->text2 : old('text2') }}" class="form-control" type="text">
+                                                    <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="example-text-input" class="form-label">النص الثاني</label>
+                                                            <input  name="text2" value="{{ $slider ? $slider->text2 : old('text2') }}" class="form-control" type="text">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="example-text-input" class="form-label">رابط الزر</label>
+                                                            <input name="button_url" value="{{ $slider ? $slider->button_url : old('button_url') }}" class="form-control" type="text">
+                                                        </div>
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label for="example-text-input" class="form-label">رابط الزر</label>
-                                                        <input name="button_url" value="{{ $slider ? $slider->button_url : old('button_url') }}" class="form-control" type="text">
+                                                    <div class="card-body text-center">
+                                                        <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                            {{ $slider ? 'تحديث' : 'إضافة' }}
+                                                        </button>
                                                     </div>
                                                 </div>
-                                                <div class="card-body text-center">
-                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                                        {{ $slider ? 'تحديث' : 'إضافة' }}
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
                                     @if(session('success-update'))
                                         <script>
                                             document.addEventListener("DOMContentLoaded", function() {
@@ -148,12 +148,12 @@
         </div>
         <!-- End Page-content -->
 
-@endsection
-@section('js')
-    <script src="{{ asset('backend/assets/libs/dropzone/min/dropzone.min.js')}}"></script>
-    <!-- Sweet Alerts js -->
-    <script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
-    <!-- Sweet alert init js-->
-    <script src="{{ asset('backend/assets/js/pages/custom-alerts.js')}}"></script>
-    <script src="{{ asset('backend/assets/js/pages/alert.init.js')}}"></script>
+        @endsection
+        @section('js')
+            <script src="{{ asset('backend/assets/libs/dropzone/min/dropzone.min.js')}}"></script>
+            <!-- Sweet Alerts js -->
+            <script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
+            <!-- Sweet alert init js-->
+            <script src="{{ asset('backend/assets/js/pages/custom-alerts.js')}}"></script>
+            <script src="{{ asset('backend/assets/js/pages/alert.init.js')}}"></script>
 @endsection
