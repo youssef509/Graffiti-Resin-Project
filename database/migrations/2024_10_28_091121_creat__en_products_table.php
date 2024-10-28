@@ -11,12 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('partiners', function (Blueprint $table) {
-            $table->id();
-            $table->string('image');
-            $table->string('alt');
-            $table->timestamps();
-        });
+        //
     }
 
     /**
@@ -24,6 +19,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('partiners');
+        //
     }
 };

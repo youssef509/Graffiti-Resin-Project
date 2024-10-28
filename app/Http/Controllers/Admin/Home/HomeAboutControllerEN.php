@@ -48,7 +48,7 @@ class HomeAboutControllerEN extends Controller
             'image1' => $uploadedImages['image1'],
             'image2' => $uploadedImages['image2'],
         ]);
-        return to_route('admin.homeabout-Ar')->with('success-create', 'تم اضافة العنصر بنجاح');
+        return to_route('admin.homeabout-En')->with('success-create', 'تم اضافة العنصر بنجاح');
     }
 
     public function update(HomeAboutEN $homeAbout) {
@@ -96,6 +96,6 @@ class HomeAboutControllerEN extends Controller
             'item4' => request()->item4,
             'item5' => request()->item5,
         ]);
-        return to_route('admin.homeabout-Ar')->with('success-update', 'تم تحديث العنصر بنجاح');
+        return to_route('admin.homeabout-En')->with('success-update', 'تم تحديث العنصر بنجاح');
     }
 }

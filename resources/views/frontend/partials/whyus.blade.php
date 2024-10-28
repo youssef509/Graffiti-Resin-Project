@@ -1,22 +1,25 @@
 <!-- start instrument section -->
+@foreach($WhyusData as $whyus)
 <section class="instrument-section pb-100 bg-primary">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-7 col-sm-12 col-md-12">
                 <div class="video-content">
-                    <a href="https://www.youtube.com/watch?v=4Y31MD36xF4" class="video-btn youtube-popup">
+                    <a href="{{$whyus->video_url}}" class="video-btn youtube-popup">
                         <i class="flaticon-play-button"></i>
                     </a>
                     <div class="video-image">
-                        <img src="frontend/assets/img/video-img-2.jpg" alt="Demo Image">
+                        <img src="{{$whyus->image_url}}" alt="Demo Image">
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 col-sm-12 col-md-12">
                 <div class="instrument-content">
                     <h2><span>Instrument</span> That We Use</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet consectetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore..</p>
+                    <h3>{{$whyus->title1}}</h3>
+                    <p>{{$whyus->text1}}</p>
+                    <h3>{{$whyus->title2}}</h3>
+                    <p>{{$whyus->text2}}</p>
                 </div>
             </div>
             <div class="col-lg-10 col-sm-12 m-auto">
@@ -66,4 +69,5 @@
         </div>
     </div>
 </section>
+@endforeach
 <!-- end instrument section -->

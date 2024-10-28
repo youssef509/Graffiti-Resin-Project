@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('partiners', function (Blueprint $table) {
+        Schema::create('Ar_whyus', function (Blueprint $table) {
             $table->id();
+            $table->string('title1');
+            $table->string('title2');
+            $table->string('text1');
+            $table->string('text2');
+            $table->string('video_url');
             $table->string('image');
-            $table->string('alt');
             $table->timestamps();
         });
     }
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('partiners');
+        Schema::dropIfExists('Ar_whyus');
     }
 };

@@ -4,18 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Partiners extends Model
+class TestimonialEn extends Model
 {
     protected $fillable = [
-        'image',
-        'alt'
+        'text',
+        'person',
+        'position',
+        'image'
     ];
-
     // Specify the table name explicitly
-    protected $table = 'partiners';
+    protected $table = 'En_testimonial';
 
     public function getImageUrlAttribute()
     {
-        return asset('uploads/partiners/' . $this->image);
+        return asset('uploads/testimonial/' . $this->image);
     }
 }
