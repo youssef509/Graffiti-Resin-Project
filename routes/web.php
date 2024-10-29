@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\Home\TestimonialControllerAR;
 use App\Http\Controllers\Admin\Home\TestimonialControllerEN;
 use App\Http\Controllers\Admin\Home\WhyUsControllerAR;
 use App\Http\Controllers\Admin\Home\WhyUsControllerEN;
+use App\Http\Controllers\Admin\Prodcuts\ProductsControllerAR;
+use App\Http\Controllers\Admin\Prodcuts\ProductsControllerEN;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\LocaleController;
@@ -78,7 +80,18 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     });
     // Routes For Products Section
     Route::prefix('products')->group(function() {
-
+        Route::get('/', [ProductsControllerAR::class, 'index'])->name('admin.products-Ar');
+        Route::post('/', [ProductsControllerAR::class, 'store'])->name('admin.products-store-Ar');
+        Route::get('{productID}/edit', [ProductsControllerAR::class, 'edit'])->name('admin.products-edit-Ar');
+        Route::put('{productID}/update', [ProductsControllerAR::class, 'update'])->name('admin.products-update-Ar');
+        Route::delete('{product}', [ProductsControllerAR::class, 'destroy'])->name('admin.products-destroy-Ar');
+    });
+    Route::prefix('products-en')->group(function() {
+        Route::get('/', [ProductsControllerEN::class, 'index'])->name('admin.products-En');
+        Route::post('/', [ProductsControllerEN::class, 'store'])->name('admin.products-store-En');
+        Route::get('{productID}/edit', [ProductsControllerEN::class, 'edit'])->name('admin.products-edit-En');
+        Route::put('{productID}/update', [ProductsControllerEN::class, 'update'])->name('admin.products-update-En');
+        Route::delete('{product}', [ProductsControllerEN::class, 'destroy'])->name('admin.products-destroy-En');
     });
 });
 
