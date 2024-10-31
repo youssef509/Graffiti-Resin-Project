@@ -43,21 +43,21 @@
                     <div class="d-flex">
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
+                            <a href={{route('backend.index')}}" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{{ asset('backend/assets/images/logo-sm.svg')}}" alt="" height="30">
+                                    <img src="{{ asset('backend/assets/images/logo.png')}}" alt="" height="30">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ asset('backend/assets/images/logo-sm.svg')}}" alt="" height="24"> <span class="logo-txt">PLATINUM</span>
+                                    <img src="{{ asset('backend/assets/images/logo.png')}}" alt="" height="24"> <span class="logo-txt">PLATINUM</span>
                                 </span>
                             </a>
 
-                            <a href="index.html" class="logo logo-light">
+                            <a href="{{route('backend.index')}}" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="{{ asset('backend/assets/images/logo-sm.svg')}}" alt="" height="30">
+                                    <img src="{{ asset('backend/assets/images/logo.png')}}" alt="" height="30">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ asset('backend/assets/images/logo-sm.svg')}}" alt="" height="24"> <span class="logo-txt">PLATINUM</span>
+                                    <img src="{{ asset('backend/assets/images/logo.png')}}" alt="" height="24"> <span class="logo-txt">PLATINUM</span>
                                 </span>
                             </a>
                         </div>
@@ -80,15 +80,13 @@
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item bg-light-subtle border-start border-end" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="{{ asset('backend/assets/images/users/avatar-1.jpg')}}"
+                                <img class="rounded-circle header-profile-user" src="{{ asset('backend/assets/images/logo.png')}}"
                                     alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ms-1 fw-medium">Paul K.</span>
+                                <span class="d-none d-xl-inline-block ms-1 fw-medium">Admin</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
-                                <a class="dropdown-item" href="apps-contacts-profile.html"><i class="mdi mdi-face-profile font-size-16 align-middle me-1"></i> Profile</a>
-                                <a class="dropdown-item" href="auth-lock-screen.html"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Lock screen</a>
                                 <div class="dropdown-divider"></div>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
@@ -134,61 +132,76 @@
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{route('admin.slider-Ar')}}" key="t-slider">الاسليدر</a></li>
                                     {{-- <li><a href="" data-key="">العناصر</a></li> --}}
-                                    <li><a href="" data-key="about">من نحن</a></li>
+                                    <li><a href="{{route('admin.homeabout-Ar')}}" data-key="about">من نحن</a></li>
                                     {{-- <li><a href="" data-key="">الانجازات</a></li> --}}
-                                    <li><a href="}" data-key="t-hero">البانر</a></li>
-                                    {{-- <li><a href="" data-key="">تواصل</a></li> --}}
-                                    <li><a href="" data-key="t-partiners">الشركاء</a></li>
-                                    <li><a href="" data-key="t-gallery">معرض الصور</a></li>
+                                    <li><a href="{{route('admin.partiners')}}" data-key="t-partiners">الشركاء</a></li>
+                                     <li><a href="{{route('admin.whyus-Ar')}}" data-key="t-whyus">لماذا نحن</a></li>
+                                    <li><a href="{{route('admin.testimonial-Ar')}}" data-key="t-testimonial">التوصيات</a></li>
                                 </ul>
                             </li>
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i data-feather="flag"></i>
-                                    <span data-key="t-email">من نحن</span>
+                                    <span data-key="t-aboutus">من نحن</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="" data-key="t-inbox">قسم من نحن</a></li>
-                                    <li><a href="" data-key="t-read-email">قسم الاسئلة</a></li>
+                                    <li><a href="{{route('admin.about-us-Ar')}}" data-key="t-aboutus-hero">قسم من نحن</a></li>
+
                                 </ul>
                             </li>
 
-
+                            <li>
+                                <a href="{{route('admin.category')}}">
+                                    <i data-feather="grid"></i>
+                                    <span data-key="t-category">الفئات</span>
+                                </a>
+                            </li>
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i data-feather="briefcase"></i>
-                                    <span data-key="t-contacts">الحملات</span>
+                                    <span data-key="t-contacts">المنتجات</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="apps-contacts-grid.html" data-key="t-user-grid">User Grid</a></li>
-                                    <li><a href="apps-contacts-list.html" data-key="t-user-list">User List</a></li>
-                                    <li><a href="apps-contacts-profile.html" data-key="t-profile">Profile</a></li>
+                                    <li><a href="{{route('admin.products-Ar')}}" data-key="t-products">اضافة منتج</a></li>
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="apps-calendar.html">
-                                    <i data-feather="message-square"></i>
-                                    <span data-key="t-calendar">تواصل معنا</span>
+                                <a href="{{route('admin.blogs-Ar')}}">
+                                    <i data-feather="align-right"></i>
+                                    <span data-key="t-blog">المقالات</span>
                                 </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow">
+                                    <i data-feather="sidebar"></i>
+                                    <span data-key="t-projects">المشاريع</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('admin.projects-Ar')}}" key="t-projects-add">اضافة مشروع</a></li>
+                                    <li><a href="{{route('admin.project-images')}}" key="t-projects-images">اضافة صور المشروع</a></li>
+
+                                </ul>
                             </li>
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i data-feather="trello"></i>
-                                    <span data-key="t-tasks">Tasks</span>
+                                    <span data-key="t-quote">طلبات التواصل</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="tasks-list.html" key="t-task-list">Task List</a></li>
-                                    <li><a href="tasks-kanban.html" key="t-kanban-board">Kanban Board</a></li>
-                                    <li><a href="tasks-create.html" key="t-create-task">Create Task</a></li>
+                                    <li><a href="{{route('admin.quote-requests-show')}}" key="t-quote-TrainingSupervision"> طلبات تدريب واشراف</a></li>
+                                    <li><a href="{{route('admin.purchasing-materials-show')}}" key="t-quote-PurchasingMaterials">طلبات شراء مواد</a></li>
+                                    <li><a href="{{route('admin.ImplementationofWorks-show')}}" key="t-quote-ImplementationofWorks">طلبات تنفيذ مشاريع</a></li>
+                                    <li><a href="{{route('admin.AuthorizedDistributor-show')}}" key="t-quote-AuthorizedDistributor">طلبات موزع معتمد</a></li>
                                 </ul>
                             </li>
 
                             <li class="menu-title" data-key="t-pages">اعدادات عامة</li>
-                            <li>
+                            {{-- <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i data-feather="file-text"></i>
                                     <span data-key="t-pages">المستخدمين</span>
@@ -203,7 +216,7 @@
                                     <li><a href="pages-404.html" data-key="t-error-404">Error 404</a></li>
                                     <li><a href="pages-500.html" data-key="t-error-500">Error 500</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i data-feather="file-text"></i>

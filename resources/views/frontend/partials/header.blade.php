@@ -114,47 +114,15 @@
                         </a>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active toggle">@lang('messages.Home')</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="index.html" class="nav-link">Home Demo - 1</a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="index-2.html" class="nav-link active">Home Demo - 2</a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="index-3.html" class="nav-link">Home Demo - 3</a>
-                                    </li>
-                                </ul>
+                                <a href="{{route('home')}}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">@lang('messages.Home')</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link toggle">@lang('messages.About')</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="about-us.html" class="nav-link">test</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="team-members.html" class="nav-link">Team Members</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="members-details.html" class="nav-link">Member Details</a>
-                                    </li>
-                                </ul>
+                                <a href="{{route('about-us')}}" class="nav-link {{ request()->routeIs('about-us') ? 'active' : '' }}">@lang('messages.About')</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link toggle">@lang('messages.Services')</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="services-grid.html" class="nav-link">Service Grid</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="services-details.html" class="nav-link">Service Details</a>
-                                    </li>
-                                </ul>
+                                <a href="{{route('services')}}" class="nav-link {{ request()->routeIs('services') ? 'active' : '' }}">@lang('messages.Services')</a>
                             </li>
 
                             <li class="nav-item"><a href="#" class="nav-link toggle">@lang('messages.Blog')</a>

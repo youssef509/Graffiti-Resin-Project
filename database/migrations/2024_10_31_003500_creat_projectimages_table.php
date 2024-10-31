@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_ar_category', function (Blueprint $table) {
+        Schema::create('projectimages', function (Blueprint $table) {
             $table->id();
+            $table->string('project_name');
             $table->timestamps();
         });
     }
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_ar_category');
+        Schema::dropIfExists('projectimages');
     }
 };

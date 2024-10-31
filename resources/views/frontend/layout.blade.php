@@ -62,6 +62,7 @@
         <!-- favicon -->
         <link rel="icon" href="frontend/assets/img/gr.png" type="image/png"/>
         @endif
+        @yield('css')
     </head>
     <body>
 
@@ -76,7 +77,7 @@
                 <div class="col-lg-3 col-md-5 col-sm-6 col-12">
                     <div class="footer-widget">
                        <div class="navbar-brand">
-                            <a href="index.html"> 
+                            <a href="index.html">
                                 <img src="frontend/assets/img/gd-logo.png" class="footer-logo1" alt="Logo" />
                                 <img src="frontend/assets/img/gd-logo.png" class="footer-logo2" alt="Logo" />
                             </a>
@@ -215,4 +216,5 @@
     <script src="frontend/assets/js/jquery.ajaxchimp.min.js"></script>
     <!-- script JS -->
     <script src="frontend/assets/js/script.js"></script>
+        @yield('js')
 </body>

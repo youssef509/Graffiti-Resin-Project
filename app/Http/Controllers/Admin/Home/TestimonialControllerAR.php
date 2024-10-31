@@ -11,6 +11,7 @@ class TestimonialControllerAR extends Controller
         $testimonialFromDB = TestimonialAr::all();
         return view('backend.Home.testimonial', ['testimonial' => $testimonialFromDB]);
     }
+
     public function store() {
         // Validate the inputs including the image
         request()->validate([
