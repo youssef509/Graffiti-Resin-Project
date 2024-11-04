@@ -1,0 +1,19 @@
+[33m47817fb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: reset: moving to origin/main
+[33m2f38eb3[m HEAD@{1}: reset: moving to HEAD
+[33m2f38eb3[m HEAD@{2}: commit: Update & Add the new Files
+[33m6b03163[m HEAD@{3}: commit (amend): Update to the Last Changes&Add the new Files
+[33m47817fb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{4}: commit: "Update to the Last Changes"
+[33m06411cd[m HEAD@{5}: commit: "Update to the Last Changes"
+[33m26090db[m HEAD@{6}: commit: "Update to the Last Changes"
+[33mfa56084[m HEAD@{7}: commit: "Update to the Last Changes"
+[33m2ee9a2a[m HEAD@{8}: commit: Update the code&Add all the new files
+[33md21ce44[m HEAD@{9}: commit: "Update to the Last Changes"
+[33m7197574[m HEAD@{10}: commit: Update The Code With The Last Changes
+[33m26aac89[m HEAD@{11}: commit: Update The Code With The Last Changes
+[33mf5561d8[m HEAD@{12}: commit: Update The Code With The Last Changes
+[33m3f4bb8d[m HEAD@{13}: commit: Update The Code With The Last Changes
+[33md4006bf[m HEAD@{14}: commit: Update The Code With The Last Changes
+[33m782a875[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{15}: rebase (abort): returning to refs/heads/main
+[33m8607fd0[m HEAD@{16}: pull origin main --rebase (start): checkout 8607fd0a63ab64e28a43d0283348bbcb5ba8bf35
+[33m782a875[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{17}: checkout: moving from master to main
+[33m782a875[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{18}: commit (initial): Update With The Last Changes
