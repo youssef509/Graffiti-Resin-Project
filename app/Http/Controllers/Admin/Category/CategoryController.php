@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
     public function edit($id) {
         $categories = Category::where('id', $id)->first();
-        return view('backend.Category.category-edit', ['category' => $categories]);
+        return view('backend.Category.Category-edit', ['category' => $categories]);
     }
 
     public function update(Request $request, $categoryID) {
@@ -42,7 +42,7 @@ class CategoryController extends Controller
             'eng_name' => $request->eng_name,
         ]);
 
-        return redirect()->route('admin.category')->with('success-update', 'تم تحديث المنتج بنجاح');
+        return redirect()->route('admin.category')->with('success-update', 'تم تحديث العنصر بنجاح');
     }
 
     public function destroy($categoryID) {

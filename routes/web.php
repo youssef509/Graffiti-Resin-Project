@@ -191,7 +191,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
 
     Route::get('Quote-Requeste/PurchasingMaterials', [QuotePurchasingMaterialsController::class, 'show'])->name('admin.purchasing-materials-show');
     Route::get('PurchasingMaterials/quote-requests-data', [QuotePurchasingMaterialsController::class, 'getData'])->name('admin.purchasing-materials-data');
-    
+
     Route::get('Quote-Requeste/ImplementationofWorks', [QuoteImplementationofWorksController::class, 'show'])->name('admin.ImplementationofWorks-show');
     Route::get('ImplementationofWorks/quote-requests-data', [QuoteImplementationofWorksController::class, 'getData'])->name('admin.ImplementationofWorks-data');
 
@@ -241,6 +241,7 @@ Route::post('/AuthorizedDistributor-send', [AuthorizedDistributorController::cla
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about-us');
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
+
 
 Route::get('/testlang',[TestController::class, 'showData']);
 
