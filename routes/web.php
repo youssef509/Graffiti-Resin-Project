@@ -188,6 +188,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     // Routes For Training and supervision request
     Route::get('Quote-Requeste/TrainingSupervision', [QuoteRequestsController::class, 'show'])->name('admin.quote-requests-show');
     Route::get('TrainingSupervision/quote-requests-data', [QuoteRequestsController::class, 'getData'])->name('admin.quote-requests-data');
+    Route::post('/Quote-Requeste/TrainingSupervision', [TrainingSupervisionController::class, 'AddRecord'])->name('trainingsupervision-add');
 
     Route::get('Quote-Requeste/PurchasingMaterials', [QuotePurchasingMaterialsController::class, 'show'])->name('admin.purchasing-materials-show');
     Route::get('PurchasingMaterials/quote-requests-data', [QuotePurchasingMaterialsController::class, 'getData'])->name('admin.purchasing-materials-data');

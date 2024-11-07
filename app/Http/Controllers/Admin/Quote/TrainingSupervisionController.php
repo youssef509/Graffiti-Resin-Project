@@ -40,4 +40,29 @@ class TrainingSupervisionController extends Controller
                 ->withInput();
         }
     }
+
+    public function AddRecord() {
+        request()->validate([
+            'name' => ['required'],
+            'age' => ['required'],
+            'phone' => ['required'],
+            'city' => ['required'],
+            'specialization' => ['required'],
+            'current_job' => ['required'],
+            'reason' => ['required'],
+        ]);
+
+        TrainingSupervision::create([
+            'name' => request()->name,
+            'age' => request()->age,
+            'phone' => request()->phone,
+            'city' => request()->city,
+            'specialization' => request()->specialization,
+            'current_job' => request()->current_job,
+            'reason' => request()->reason,
+        ]);
+
+        return to_route('admin.quote-requests-show')->with('success-create', 'تم اضافة العنصر بنجاح');
+
+    }
 }

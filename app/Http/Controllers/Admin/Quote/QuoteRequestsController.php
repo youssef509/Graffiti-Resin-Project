@@ -17,4 +17,5 @@ class QuoteRequestsController extends Controller
         $data = TrainingSupervision::all();
         return DataTables::of($data)->make(true);
     }
+    
 }

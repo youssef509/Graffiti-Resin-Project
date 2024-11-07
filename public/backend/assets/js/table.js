@@ -1,11 +1,16 @@
 $(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     // Get the AJAX URL from the data attribute on the table
     let ajaxUrl = $('.datatable').data('url');
 
     $('.datatable').DataTable({
         processing: true,
         serverSide: true,
-        ajax: ajaxUrl,  // Use the AJAX URL from the data attribute
+        ajax: ajaxUrl,
         columns: [
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
@@ -14,7 +19,25 @@ $(document).ready(function() {
             { data: 'city', name: 'city' },
             { data: 'specialization', name: 'specialization' },
             { data: 'current_job', name: 'current_job' },
-            { data: 'reason', name: 'reason' }
+            { data: 'reason', name: 'reason' },
+            {
+                data: 'created_at',
+                name: 'created_at',
+                render: function(data) {
+                    return data ? data.slice(0, 19) : '';
+                }
+            },
+            {
+                data: null,
+                orderable: false,
+                searchable: false,
+                render: function (data, type, row) {
+                    return `
+                        <a href="/admin/quote-requests/${row.id}/edit" class="btn btn-primary btn-sm">Edit</a>
+                        <button class="btn btn-danger btn-sm delete-btn sa-warning" data-id="${row.id}">Delete</button>
+                    `;
+                }
+            }
         ],
         dom: 'Bfrtip',
         buttons: [
@@ -26,7 +49,6 @@ $(document).ready(function() {
                     columns: ':visible'
                 }
             },
-
             {
                 extend: 'print',
                 text: 'طباعة',
@@ -42,6 +64,6 @@ $(document).ready(function() {
                 className: 'mdl-data-table__cell--non-numeric'
             }
         ],
-        pageLength: 10  // Set default page length
+        pageLength: 10 // Set default page length
     });
 });
