@@ -65,4 +65,37 @@ class TrainingSupervisionController extends Controller
         return to_route('admin.quote-requests-show')->with('success-create', 'تم اضافة العنصر بنجاح');
 
     }
+
+    public function edit($id) {
+        $DataFromDB = TrainingSupervision::where('id', $id)->first();
+        return view('backend.Quote.TrainingSupervision.edit', ['DataFromDB' => $DataFromDB]);
+
+    }
+
+    public function update($id) {
+        $DataFromDB = TrainingSupervision::where('id', $id)->first();
+        request()->validate([
+            'name' => ['required'],
+            'age' => ['required'],
+            'phone' => ['required'],
+            'city' => ['required'],
+            'specialization' => ['required'],
+            'current_job' => ['required'],
+            'reason' => ['required'],
+        ]);
+
+        $DataFromDB->update([
+           'name' => request()->name,
+            'age' => request()->age,
+            'phone' => request()->phone,
+            'city' => request()->city,
+            'specialization' => request()->specialization,
+            'current_job' => request()->current_job,
+            'reason' => request()->reason,
+        ]);
+
+        return redirect()->route('admin.quote-requests-show')->with('success-update', 'تم تحديث العنصر بنجاح');
+    }
+
+    
 }

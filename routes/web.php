@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Admin\About\AboutusControllerAR;
 use App\Http\Controllers\Admin\About\AboutusControllerEN;
@@ -189,6 +188,8 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('Quote-Requeste/TrainingSupervision', [QuoteRequestsController::class, 'show'])->name('admin.quote-requests-show');
     Route::get('TrainingSupervision/quote-requests-data', [QuoteRequestsController::class, 'getData'])->name('admin.quote-requests-data');
     Route::post('/Quote-Requeste/TrainingSupervision', [TrainingSupervisionController::class, 'AddRecord'])->name('trainingsupervision-add');
+    Route::get('/Quote-Requeste/TrainingSupervision/{id}/edit', [TrainingSupervisionController::class, 'edit'])->name('trainingsupervision-edit');
+    Route::put('/Quote-Requeste/TrainingSupervision/{id}/update', [TrainingSupervisionController::class, 'update'])->name('trainingsupervision-update');
 
     Route::get('Quote-Requeste/PurchasingMaterials', [QuotePurchasingMaterialsController::class, 'show'])->name('admin.purchasing-materials-show');
     Route::get('PurchasingMaterials/quote-requests-data', [QuotePurchasingMaterialsController::class, 'getData'])->name('admin.purchasing-materials-data');

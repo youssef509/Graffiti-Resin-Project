@@ -33,8 +33,8 @@ $(document).ready(function() {
                 searchable: false,
                 render: function (data, type, row) {
                     return `
-                        <a href="/admin/quote-requests/${row.id}/edit" class="btn btn-primary btn-sm">Edit</a>
-                        <button class="btn btn-danger btn-sm delete-btn sa-warning" data-id="${row.id}">Delete</button>
+                        <a href="/admin/Quote-Requeste/TrainingSupervision/${row.id}/edit" class="btn btn-primary btn-sm">تعديل</a>
+                        <button class="btn btn-danger btn-sm delete-btn sa-warning" data-id="${row.id}">حذف</button>
                     `;
                 }
             }
