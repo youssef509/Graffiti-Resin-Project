@@ -97,5 +97,15 @@ class TrainingSupervisionController extends Controller
         return redirect()->route('admin.quote-requests-show')->with('success-update', 'تم تحديث العنصر بنجاح');
     }
 
-    
+    public function destroy($id) {
+        $DataFromDB = TrainingSupervision::find($id);
+        $DataFromDB -> delete();
+        return to_route('admin.quote-requests-show')->with('success', 'تم حذف العنصر بنجاح');
+    }
+
+    public function test() {
+        
+    }
+
+
 }

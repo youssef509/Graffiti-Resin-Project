@@ -190,6 +190,8 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::post('/Quote-Requeste/TrainingSupervision', [TrainingSupervisionController::class, 'AddRecord'])->name('trainingsupervision-add');
     Route::get('/Quote-Requeste/TrainingSupervision/{id}/edit', [TrainingSupervisionController::class, 'edit'])->name('trainingsupervision-edit');
     Route::put('/Quote-Requeste/TrainingSupervision/{id}/update', [TrainingSupervisionController::class, 'update'])->name('trainingsupervision-update');
+    Route::delete('/Quote-Requeste/TrainingSupervision/{id}/delete', [TrainingSupervisionController::class, 'destroy'])->name('trainingsupervision-delete');
+    
 
     Route::get('Quote-Requeste/PurchasingMaterials', [QuotePurchasingMaterialsController::class, 'show'])->name('admin.purchasing-materials-show');
     Route::get('PurchasingMaterials/quote-requests-data', [QuotePurchasingMaterialsController::class, 'getData'])->name('admin.purchasing-materials-data');

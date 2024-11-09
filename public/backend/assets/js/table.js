@@ -4,9 +4,9 @@ $(document).ready(function() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    // Get the AJAX URL from the data attribute on the table
-    let ajaxUrl = $('.datatable').data('url');
 
+    // Initialize the DataTable
+    let ajaxUrl = $('.datatable').data('url');
     $('.datatable').DataTable({
         processing: true,
         serverSide: true,
@@ -33,8 +33,12 @@ $(document).ready(function() {
                 searchable: false,
                 render: function (data, type, row) {
                     return `
-                        <a href="/admin/Quote-Requeste/TrainingSupervision/${row.id}/edit" class="btn btn-primary btn-sm">تعديل</a>
-                        <button class="btn btn-danger btn-sm delete-btn sa-warning" data-id="${row.id}">حذف</button>
+                        <a href="/admin/Quote-Requeste/TrainingSupervision/${row.id}/edit" class="btn btn-success btn-sm">تعديل</a>
+                        <form method="POST" action="/admin/Quote-Requeste/TrainingSupervision/${row.id}/delete" class="delete-form" style="display: inline;">
+                            <input type="hidden" name="_token" value="${$('meta[name="csrf-token"]').attr('content')}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="button" class="btn btn-danger btn-sm sa-warning" data-id="${row.id}">حذف</button>
+                        </form>
                     `;
                 }
             }
@@ -45,25 +49,41 @@ $(document).ready(function() {
                 extend: 'excelHtml5',
                 text: 'تصدير الي Excel',
                 className: 'btn btn-secondary waves-effect waves-light',
-                exportOptions: {
-                    columns: ':visible'
-                }
+                exportOptions: { columns: ':visible' }
             },
             {
                 extend: 'print',
                 text: 'طباعة',
                 className: 'btn btn-primary waves-effect waves-light',
-                exportOptions: {
-                    columns: ':visible'
-                }
+                exportOptions: { columns: ':visible' }
             }
         ],
         columnDefs: [
-            {
-                targets: [0, 1, 2],
-                className: 'mdl-data-table__cell--non-numeric'
-            }
+            { targets: [0, 1, 2], className: 'mdl-data-table__cell--non-numeric' }
         ],
-        pageLength: 10 // Set default page length
+        pageLength: 10
+    });
+
+    // Handle delete button click using delegation
+    $(document).on('click', '.sa-warning', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const form = $(this).closest('.delete-form'); // Find the closest form related to the clicked button
+
+        // Show SweetAlert confirmation
+        Swal.fire({
+            title: "هل انت متأكد؟",
+            text: "ستقوم بحذف العنصر المحدد",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#1c84ee",
+            cancelButtonColor: "#fd625e",
+            confirmButtonText: "نعم, احذف"
+        }).then(function(result) {
+            if (result.isConfirmed) {
+                // Submit the form if confirmed
+                form.submit();
+            }
+        });
     });
 });
