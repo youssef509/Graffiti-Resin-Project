@@ -6,6 +6,8 @@
 
 @section('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link href="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 @section('page-content')
@@ -25,9 +27,8 @@
                                     <th>المدينة</th>
                                     <th>هوية العميل</th>
                                     <th>المنتجات المطلوبة</th>
-                                    <th>المساحة المطلوبة</th>
-                                    <th>السماكة</th>
-                                    <th>مرفقات</th>
+                                    <th>التاريخ</th>
+                                    <th>اجراء</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -36,6 +37,94 @@
                         </div>
                     </div>
                 </div>
+                <div class="tab-content p-3 text">
+                    <div class="tab-pane active" id="arabic-1" role="tabpanel">
+                        <form method="POST" action="{{route('purchasingmaterials-update', $DataFromDB->id)}}"  enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label">الاسم</label>
+                                        <input name="name" value="{{$DataFromDB->name}}" class="form-control" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label">المدينة</label>
+                                        <input name="city" value="{{$DataFromDB->city}}" class="form-control" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label"> هوية العميل</label>
+                                        <input name="client_category" value="{{$DataFromDB->client_category}}" class="form-control" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label">نوع المنتجات المراد شرائها</label>
+                                        <input name="products_to_by" value="{{$DataFromDB->products_to_by}}" class="form-control" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label">السماكة المطلوبة للمنتج</label>
+                                        <input name="thickness" value="{{$DataFromDB->thickness}}" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label">رقم الهاتف</label>
+                                        <input name="phone"  value="{{$DataFromDB->phone}}" class="form-control" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label"> هوية العميل</label>
+                                        <input name="client_category" value="{{$DataFromDB->client_category}}" class="form-control" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label">المساحة اإلجمالية المراد توريد المواد لها</label>
+                                        <input name="area_for_materials" value="{{$DataFromDB->area_for_materials}}" class="form-control" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">الصورة</label>
+                                        <input name="image" class="form-control" type="file" id="formFile">
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light">تحديث</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                @if(session('success-create'))
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            Swal.fire({
+                                title: "نجاح!",
+                                text: "{{ session('success-create') }}",
+                                icon: "success",
+                                confirmButtonText: "حسناً"
+                            });
+                        });
+                    </script>
+                @endif
+                @if(session('success-update'))
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        Swal.fire({
+                            title: "نجاح!",
+                            text: "{{ session('success-update') }}",
+                            icon: "success",
+                            confirmButtonText: "حسناً"
+                        });
+                    });
+                </script>
+                @endif
+                @if(session('success'))
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            Swal.fire({
+                                title: "نجاح!",
+                                text: "{{ session('success') }}",
+                                icon: "success",
+                                confirmButtonText: "حسناً"
+                            });
+                        });
+                    </script>
+                @endif
             </div>
         </div>
     </div>
@@ -51,6 +140,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+    <!-- Sweet alert init js-->
+    <script src="{{ asset('backend/assets/js/pages/custom-alerts.js')}}"></script>
+    {{-- <script src="{{ asset('backend/assets/js/pages/alert.init.js')}}"></script> --}}
+    <script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
 
     <!-- Link to table.js -->
     <script src="{{ asset('backend/assets/js/PurchasingMaterials-table.js') }}"></script>

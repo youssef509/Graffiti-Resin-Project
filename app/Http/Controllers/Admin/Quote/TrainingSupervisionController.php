@@ -103,9 +103,5 @@ class TrainingSupervisionController extends Controller
         return to_route('admin.quote-requests-show')->with('success', 'تم حذف العنصر بنجاح');
     }
 
-    public function test() {
-        
-    }
-
 
 }

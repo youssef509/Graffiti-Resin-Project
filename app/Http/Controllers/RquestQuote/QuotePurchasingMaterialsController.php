@@ -10,7 +10,7 @@ class QuotePurchasingMaterialsController extends Controller
 {
     public function show()
     {
-        return view('backend.Quote.ImplementationofWorks.index');
+        return view('backend.Quote.PurchasingMaterials.index');
     }
 
     public function getData(Request $request)
@@ -25,7 +25,8 @@ class QuotePurchasingMaterialsController extends Controller
             'area_for_materials',
             'thickness',
             'image_need',
-            'image'
+            'image',
+            'created_at'
         ]);
 
         return DataTables::of($data)

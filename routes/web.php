@@ -195,6 +195,10 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
 
     Route::get('Quote-Requeste/PurchasingMaterials', [QuotePurchasingMaterialsController::class, 'show'])->name('admin.purchasing-materials-show');
     Route::get('PurchasingMaterials/quote-requests-data', [QuotePurchasingMaterialsController::class, 'getData'])->name('admin.purchasing-materials-data');
+    Route::post('/Quote-Requeste/PurchasingMaterials', [PurchasingMaterialsController::class, 'AddRecord'])->name('purchasingmaterials-add');
+    Route::get('/Quote-Requeste/PurchasingMaterials/{id}/edit', [PurchasingMaterialsController::class, 'edit'])->name('purchasingmaterials-edit');
+    Route::put('/Quote-Requeste/PurchasingMaterials/{id}/update', [PurchasingMaterialsController::class, 'update'])->name('purchasingmaterials-update');
+    Route::delete('/Quote-Requeste/PurchasingMaterials/{id}/delete', [PurchasingMaterialsController::class, 'destroy'])->name('purchasingmaterials-delete');
 
     Route::get('Quote-Requeste/ImplementationofWorks', [QuoteImplementationofWorksController::class, 'show'])->name('admin.ImplementationofWorks-show');
     Route::get('ImplementationofWorks/quote-requests-data', [QuoteImplementationofWorksController::class, 'getData'])->name('admin.ImplementationofWorks-data');

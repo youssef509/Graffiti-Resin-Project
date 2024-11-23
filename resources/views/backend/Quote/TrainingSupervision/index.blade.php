@@ -7,6 +7,7 @@
 @section('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link href="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 @section('page-content')
@@ -117,6 +118,18 @@
                                         Swal.fire({
                                             title: "نجاح!",
                                             text: "{{ session('success-update') }}",
+                                            icon: "success",
+                                            confirmButtonText: "حسناً"
+                                        });
+                                    });
+                                </script>
+                            @endif
+                            @if(session('success'))
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                        Swal.fire({
+                                            title: "نجاح!",
+                                            text: "{{ session('success') }}",
                                             icon: "success",
                                             confirmButtonText: "حسناً"
                                         });
