@@ -32,7 +32,7 @@
                                 @endif
                                 <div class="tab-content p-3 text">
                                     <div class="tab-pane active" id="arabic-1" role="tabpanel">
-                                        <form method="POST" action="{{route('purchasingmaterials-update', $DataFromDB->id)}}"  enctype="multipart/form-data">
+                                        <form method="POST" action="{{route('ImplementationofWorks-update', $DataFromDB->id)}}"  enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <div class="row">
@@ -46,26 +46,38 @@
                                                         <input name="city" value="{{$DataFromDB->city}}" class="form-control" type="text">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="example-text-input" class="form-label"> هوية العميل</label>
-                                                        <input name="client_category" value="{{$DataFromDB->client_category}}" class="form-control" type="text">
+                                                        <label for="example-text-input" class="form-label">نوع الاعمال المراد تنفيذها</label>
+                                                        <input name="project_type" value="{{$DataFromDB->project_type}}" class="form-control" type="text">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="example-text-input" class="form-label">نوع المنتجات المراد شرائها</label>
-                                                        <input name="products_to_by" value="{{$DataFromDB->products_to_by}}" class="form-control" type="text">
+                                                        <label for="example-text-input" class="form-label">نوع المبنى</label>
+                                                        <input name="building_type" value="{{$DataFromDB->building_type}}" class="form-control" type="text">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="example-text-input" class="form-label">السماكة المطلوبة للمنتج</label>
+                                                        <label for="example-text-input" class="form-label">السماكة المطلوبة</label>
                                                         <input name="thickness" value="{{$DataFromDB->thickness}}" class="form-control" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="example-text-input" class="form-label">ثقوب</label>
+                                                        <input name="gaps" value="{{$DataFromDB->gaps}}" class="form-control" type="text">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
                                                         <label for="example-text-input" class="form-label">رقم الهاتف</label>
-                                                        <input name="phone"  value="{{$DataFromDB->phone}}" class="form-control" type="text">
+                                                        <input name="phone" value="{{$DataFromDB->phone}}" class="form-control" type="text">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="example-text-input" class="form-label">المساحة اإلجمالية المراد توريد المواد لها</label>
+                                                        <label for="example-text-input" class="form-label"> هوية العميل</label>
+                                                        <input name="client_category" value="{{$DataFromDB->client_category}}" class="form-control" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="example-text-input" class="form-label">المساحة المطلوبة</label>
                                                         <input name="area_for_materials" value="{{$DataFromDB->area_for_materials}}" class="form-control" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="example-text-input" class="form-label">حالة الأرضية</label>
+                                                        <input name="floor_statue" value="{{$DataFromDB->floor_statue}}" class="form-control" type="text">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="formFile" class="form-label">الصورة</label>
@@ -73,9 +85,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-body text-center">
-                                                    <button type="submit" class="btn btn-success waves-effect waves-light">تحديث</button>
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">إضافة</button>
                                                 </div>
                                             </div>
+                                        </form>
                                         </form>
                                     </div>
                                 </div>

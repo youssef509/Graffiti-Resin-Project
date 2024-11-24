@@ -202,9 +202,18 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
 
     Route::get('Quote-Requeste/ImplementationofWorks', [QuoteImplementationofWorksController::class, 'show'])->name('admin.ImplementationofWorks-show');
     Route::get('ImplementationofWorks/quote-requests-data', [QuoteImplementationofWorksController::class, 'getData'])->name('admin.ImplementationofWorks-data');
+    Route::post('/Quote-Requeste/ImplementationofWorks', [ImplementationofWorksController::class, 'AddRecord'])->name('ImplementationofWorks-add');
+    Route::get('/Quote-Requeste/ImplementationofWorks/{id}/edit', [ImplementationofWorksController::class, 'edit'])->name('ImplementationofWorks-edit');
+    Route::put('/Quote-Requeste/ImplementationofWorks/{id}/update', [ImplementationofWorksController::class, 'update'])->name('ImplementationofWorks-update');
+    Route::delete('/Quote-Requeste/ImplementationofWorks/{id}/delete', [ImplementationofWorksController::class, 'destroy'])->name('ImplementationofWorks-delete');
 
     Route::get('Quote-Requeste/AuthorizedDistributor', [QuoteAuthorizedDistributorController::class, 'show'])->name('admin.AuthorizedDistributor-show');
     Route::get('AuthorizedDistributor/quote-requests-data', [QuoteAuthorizedDistributorController::class, 'getData'])->name('admin.AuthorizedDistributor-data');
+    Route::post('/Quote-Requeste/AuthorizedDistributor', [AuthorizedDistributorController::class, 'AddRecord'])->name('AuthorizedDistributor-add');
+    Route::get('/Quote-Requeste/AuthorizedDistributor/{id}/edit', [AuthorizedDistributorController::class, 'edit'])->name('AuthorizedDistributor-edit');
+    Route::put('/Quote-Requeste/AuthorizedDistributor/{id}/update', [AuthorizedDistributorController::class, 'update'])->name('AuthorizedDistributor-update');
+    Route::delete('/Quote-Requeste/AuthorizedDistributor/{id}/delete', [AuthorizedDistributorController::class, 'destroy'])->name('AuthorizedDistributor-delete');
+
 
 
 

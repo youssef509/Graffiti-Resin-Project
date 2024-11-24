@@ -29,6 +29,7 @@ class QuoteImplementationofWorksController extends Controller
             'gaps',
             'image_need',
             'image',
+            'created_at'
         ]);
 
         return DataTables::of($data)

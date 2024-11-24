@@ -44,4 +44,62 @@ class AuthorizedDistributorController extends Controller
                 ->withInput();
         }
     }
+
+    public function AddRecord() {
+        request()->validate([
+            'name' => ['required'],
+            'phone' => ['required'],
+            'city' => ['required'],
+            'street' => ['required'],
+        ]);
+
+        AuthorizedDistributor::create([
+            'name' => request()->name,
+            'phone' => request()->phone,
+            'city' => request()->city,
+            'street' => request()->street,
+            'shop_name' => request()->input('shop_name' , null),
+            'shop_type' => request()->input('shop_type', null),
+            'shop_size' => request()->input('shop_size', null),
+            'shop_products' => request()->input('shop_products', null),
+        ]);
+
+        return to_route('admin.AuthorizedDistributor-show')->with('success-create', 'تم اضافة العنصر بنجاح');
+
+    }
+
+    public function edit($id) {
+        $DataFromDB = AuthorizedDistributor::where('id', $id)->first();
+        return view('backend.Quote.AuthorizedDistributor.edit', ['DataFromDB' => $DataFromDB]);
+
+    }
+
+    public function update($id) {
+        $DataFromDB = AuthorizedDistributor::where('id', $id)->first();
+        request()->validate([
+            'name' => ['required'],
+            'phone' => ['required'],
+            'city' => ['required'],
+            'street' => ['required'],
+        ]);
+
+        $DataFromDB->update([
+           'name' => request()->name,
+            'phone' => request()->phone,
+            'city' => request()->city,
+            'street' => request()->street,
+            'shop_name' => request()->input('shop_name' , null),
+            'shop_type' => request()->input('shop_type', null),
+            'shop_size' => request()->input('shop_size', null),
+            'shop_products' => request()->input('shop_products', null),
+        ]);
+
+        return redirect()->route('admin.AuthorizedDistributor-show')->with('success-update', 'تم تحديث العنصر بنجاح');
+    }
+
+    public function destroy($id) {
+        $DataFromDB = AuthorizedDistributor::find($id);
+        $DataFromDB -> delete();
+        return to_route('admin.AuthorizedDistributor-show')->with('success', 'تم حذف العنصر بنجاح');
+    }
 }

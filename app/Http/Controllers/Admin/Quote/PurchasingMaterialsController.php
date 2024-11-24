@@ -18,6 +18,7 @@ class PurchasingMaterialsController extends Controller
                 'phone' => ['required'],
                 'city' => ['required'],
                 'client_category' => ['required'],
+                'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
             ]);
 
             // Initialize image as null by default
