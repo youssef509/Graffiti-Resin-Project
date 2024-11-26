@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SocialMedia extends Model
+class ConversionsAPI extends Model
 {
     protected $fillable = [
         'facebook',
@@ -14,5 +14,5 @@ class SocialMedia extends Model
     ];
 
     // Specify the table name explicitly
-    protected $table = 'socialmedialinks';
+    protected $table = 'conversions_api';
 }

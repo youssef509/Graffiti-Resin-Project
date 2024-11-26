@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin\GeneralSettings;
 use App\Http\Controllers\Controller;
-use App\Models\SocialMedia;
+use App\Models\ConversionsAPI;
 use Illuminate\Http\Request;
 
-class SocialMediaController extends Controller
+class ConversionsApiController extends Controller
 {
     public function index() {
-        $DataFromDB = SocialMedia::first();
-        return view('backend.Settings.socialmedia', ['Data' => $DataFromDB]);
+        $DataFromDB = ConversionsAPI::first();
+        return view('backend.Settings.conversionsAPI', ['Data' => $DataFromDB]);
     }
 
     public function store() {
@@ -21,16 +21,16 @@ class SocialMediaController extends Controller
             'linkedin' => ['required'],
         ]);
        
-        SocialMedia::create([
+        ConversionsAPI::create([
             'facebook' => request()->facebook,
             'instagram' => request()->instagram,
             'tiktok' => request()->tiktok,
             'linkedin' => request()->linkedin,
         ]);
-        return to_route('settings-socialmedia')->with('success-create', 'تم اضافة العنصر بنجاح');
+        return to_route('settings-ConversionsAPIs')->with('success-create', 'تم اضافة العنصر بنجاح');
     }
 
-    public function update(SocialMedia $Data) {
+    public function update(ConversionsAPI $Data) {
         request()->validate([
             'facebook' => ['required'],
             'instagram' => ['required'],
@@ -45,6 +45,6 @@ class SocialMediaController extends Controller
             'tiktok' => request()->tiktok,
             'linkedin' => request()->linkedin,
         ]);
-        return to_route('settings-socialmedia')->with('success-update', 'تم تحديث العنصر بنجاح');
+        return to_route('settings-ConversionsAPIs')->with('success-update', 'تم تحديث العنصر بنجاح');
     }
 }

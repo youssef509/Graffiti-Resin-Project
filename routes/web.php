@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\About\AboutusControllerEN;
 use App\Http\Controllers\Admin\Blog\BlogControllerAR;
 use App\Http\Controllers\Admin\Blog\BlogControllerEN;
 use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\GeneralSettings\ContactInformationsController as GeneralSettingsContactInformationsController;
 use App\Http\Controllers\Admin\Home\HomeAboutControllerAR;
 use App\Http\Controllers\Admin\Home\HomeAboutControllerEN;
 use App\Http\Controllers\Admin\Home\PartinersController;
@@ -30,12 +31,15 @@ use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RquestQuote\RquestQuoteController;
 use App\Http\Controllers\Admin\Quote\PurchasingMaterialsController;
+use App\Http\Controllers\ContactInformations;
+use App\Http\Controllers\Admin\GeneralSettings\ContactInformationsController;
+use App\Http\Controllers\Admin\GeneralSettings\ConversionsApiController;
+use App\Http\Controllers\Admin\GeneralSettings\SocialMediaController;
 use App\Http\Controllers\RquestQuote\QuotePurchasingMaterialsController;
 use App\Http\Controllers\RquestQuote\QuoteImplementationofWorksController;
 use App\Http\Controllers\RquestQuote\QuoteAuthorizedDistributorController;
 use App\Http\Controllers\Services\ServicesController;
 use App\Http\Controllers\TestController;
-use App\Mail\PurchasingMaterials;
 use Illuminate\Support\Facades\Route;
 
 Route::fallback(function () {
@@ -213,6 +217,29 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/Quote-Requeste/AuthorizedDistributor/{id}/edit', [AuthorizedDistributorController::class, 'edit'])->name('AuthorizedDistributor-edit');
     Route::put('/Quote-Requeste/AuthorizedDistributor/{id}/update', [AuthorizedDistributorController::class, 'update'])->name('AuthorizedDistributor-update');
     Route::delete('/Quote-Requeste/AuthorizedDistributor/{id}/delete', [AuthorizedDistributorController::class, 'destroy'])->name('AuthorizedDistributor-delete');
+
+
+    // Routes For Contact Informations
+    Route::prefix('/contact-infos')->group(function() {
+        Route::get('/', [ContactInformationsController::class, 'index'])->name('settings-contactinfos');
+        Route::post('/', [ContactInformationsController::class, 'store'])->name('settings-contactinfos-store');
+        Route::put('/{Data}/update', [ContactInformationsController::class, 'update'])->name('settings-contactinfos-update');
+    });
+
+    // Routes For Socail Media Links
+    Route::prefix('/socialmedia-links')->group(function() {
+        Route::get('/', [SocialMediaController::class, 'index'])->name('settings-socialmedia');
+        Route::post('/', [SocialMediaController::class, 'store'])->name('settings-socialmedia-store');
+        Route::put('/{Data}/update', [SocialMediaController::class, 'update'])->name('settings-socialmedia-update');
+    });
+
+    // Routes for ConversionsAPIs 
+    Route::prefix('/ConversionsAPIs')->group(function() {
+        Route::get('/', [ConversionsApiController::class, 'index'])->name('settings-ConversionsAPIs');
+        Route::post('/', [ConversionsApiController::class, 'store'])->name('settings-ConversionsAPIs-store');
+        Route::put('/{Data}/update', [ConversionsApiController::class, 'update'])->name('settings-ConversionsAPIs-update');
+    });
+    
 
 
 

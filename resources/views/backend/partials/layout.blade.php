@@ -220,17 +220,12 @@
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i data-feather="file-text"></i>
-                                    <span data-key="t-pages">بيانات التواصل</span>
+                                    <span data-key="t-gs">اعدادات التواصل</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="pages-starter.html" data-key="t-starter-page">Starter Page</a></li>
-                                    <li><a href="pages-maintenance.html" data-key="t-maintenance">Maintenance</a></li>
-                                    <li><a href="pages-comingsoon.html" data-key="t-coming-soon">Coming Soon</a></li>
-                                    <li><a href="pages-timeline.html" data-key="t-timeline">Timeline</a></li>
-                                    <li><a href="pages-faqs.html" data-key="t-faqs">FAQs</a></li>
-                                    <li><a href="pages-pricing.html" data-key="t-pricing">Pricing</a></li>
-                                    <li><a href="pages-404.html" data-key="t-error-404">Error 404</a></li>
-                                    <li><a href="pages-500.html" data-key="t-error-500">Error 500</a></li>
+                                    <li><a href="{{route('settings-contactinfos')}}" data-key="t-gs-contact">بيانات التواصل</a></li>
+                                    <li><a href="{{route('settings-socialmedia')}}" data-key="t-gs-socialmedia">السوشيال ميديا</a></li>
+                                    <li><a href="{{route('settings-ConversionsAPIs')}}" data-key="t-gs-ConversionsAPIs">ConversionsAPIs</a></li>
                                 </ul>
                             </li>
                             <li>
