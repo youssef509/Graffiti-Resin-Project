@@ -1,6 +1,10 @@
 @extends('frontend.layout')
-
-@section('title', 'Home Page')
+@section('meta-seo' )
+    <meta name="description" content="{{$metaSeo->meta_description}}">
+    <meta name="keywords" content="{{$metaSeo->meta_keywords}}">
+    <meta name="robots" content="{{$metaSeo->meta_title}}">
+@endsection
+@section('title', __('messages.Home'))
 
 @section('page-content')
 

@@ -2,7 +2,7 @@
 <section class="testimonial-section testimonial-two ptb-100 bg-primary">
     <div class="container">
         <div class="section-title style-two">
-            <h2><span>Thoughts</span> Of Our Satisfied Client About Us</h2>
+            <h2>@lang('messages.SatisfiedClient')</h2>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-10 m-auto">

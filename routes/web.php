@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\About\AboutusControllerEN;
 use App\Http\Controllers\Admin\Blog\BlogControllerAR;
 use App\Http\Controllers\Admin\Blog\BlogControllerEN;
 use App\Http\Controllers\Admin\Category\CategoryController;
-use App\Http\Controllers\Admin\GeneralSettings\ContactInformationsController as GeneralSettingsContactInformationsController;
 use App\Http\Controllers\Admin\Home\HomeAboutControllerAR;
 use App\Http\Controllers\Admin\Home\HomeAboutControllerEN;
 use App\Http\Controllers\Admin\Home\PartinersController;
@@ -35,6 +34,15 @@ use App\Http\Controllers\ContactInformations;
 use App\Http\Controllers\Admin\GeneralSettings\ContactInformationsController;
 use App\Http\Controllers\Admin\GeneralSettings\ConversionsApiController;
 use App\Http\Controllers\Admin\GeneralSettings\SocialMediaController;
+use App\Http\Controllers\Admin\Seo\AboutSeoController;
+use App\Http\Controllers\Admin\Seo\BlogSeoController;
+use App\Http\Controllers\Admin\Seo\HomeSeoController;
+use App\Http\Controllers\Admin\Seo\ProductsSeoController;
+use App\Http\Controllers\Admin\Seo\ProjectsSeoController;
+use App\Http\Controllers\Blog\BlogController;
+use App\Http\Controllers\Contact\ContactUsController;
+use App\Http\Controllers\Products\ProductsController;
+use App\Http\Controllers\Projects\ProjectsController;
 use App\Http\Controllers\RquestQuote\QuotePurchasingMaterialsController;
 use App\Http\Controllers\RquestQuote\QuoteImplementationofWorksController;
 use App\Http\Controllers\RquestQuote\QuoteAuthorizedDistributorController;
@@ -239,11 +247,41 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
         Route::post('/', [ConversionsApiController::class, 'store'])->name('settings-ConversionsAPIs-store');
         Route::put('/{Data}/update', [ConversionsApiController::class, 'update'])->name('settings-ConversionsAPIs-update');
     });
+
+    // Routes For SEO
+    Route::prefix('/seo')->group(function() {
+        Route::prefix('/homepage')->group(function() {
+            Route::get('/', [HomeSeoController::class, 'index'])->name('seo-homepage');
+            Route::post('/', [HomeSeoController::class, 'store'])->name('seo-homepage-store');
+            Route::put('/{Data}/update', [HomeSeoController::class, 'update'])->name('seo-homepage-update');
+
+        });
+        Route::prefix('/about')->group(function() {
+            Route::get('/', [AboutSeoController::class, 'index'])->name('seo-aboutpage');
+            Route::post('/', [AboutSeoController::class, 'store'])->name('seo-aboutpage-store');
+            Route::put('/{Data}/update', [AboutSeoController::class, 'update'])->name('seo-aboutpage-update');
+
+        });
+        Route::prefix('/products')->group(function() {
+            Route::get('/', [ProductsSeoController::class, 'index'])->name('seo-productspage');
+            Route::post('/', [ProductsSeoController::class, 'store'])->name('seo-productspage-store');
+            Route::put('/{Data}/update', [ProductsSeoController::class, 'update'])->name('seo-productspage-update');
+
+        });
+        Route::prefix('/projects')->group(function() {
+            Route::get('/', [ProjectsSeoController::class, 'index'])->name('seo-projectspage');
+            Route::post('/', [ProjectsSeoController::class, 'store'])->name('seo-projectspage-store');
+            Route::put('/{Data}/update', [ProjectsSeoController::class, 'update'])->name('seo-projectspage-update');
+
+        });
+        Route::prefix('/blog')->group(function() {
+            Route::get('/', [BlogSeoController::class, 'index'])->name('seo-blogpage');
+            Route::post('/', [BlogSeoController::class, 'store'])->name('seo-blogpage-store');
+            Route::put('/{Data}/update', [BlogSeoController::class, 'update'])->name('seo-blogpage-update');
+
+        });
+    });
     
-
-
-
-
 });
 
 Route::get('/dashboard', function () {
@@ -258,9 +296,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
-
-
 Route::get('/TrainingSupervision', [RquestQuoteController::class, 'index'])->name('quote.index');
 Route::post('/TrainingSupervision-send', [TrainingSupervisionController::class, 'store'])->name('trainingsupervision-send');
 
@@ -273,18 +308,20 @@ Route::post('/ImplementationOfWorks-send', [ImplementationOfWorksController::cla
 Route::get('/AuthorizedDistributor', [RquestQuoteController::class, 'AuthorizedDistributor'])->name('quote.authorizedDistributor');
 Route::post('/AuthorizedDistributor-send', [AuthorizedDistributorController::class, 'store'])->name('quote.authorizedDistributor-send');
 
-
-
-
-
-
-
-
-
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about-us');
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
+Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
+Route::get('/projects/{id}/project-details', [ProjectsController::class, 'show'])->name('projects-show');
+Route::get('/products', [ProductsController::class, 'index'])->name('products');
+Route::get('/products/{id}/products-details', [ProductsController::class, 'show'])->name('products-show');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/{id}/blog-details', [BlogController::class, 'show'])->name('blog-show');
+Route::get('/contact', [ContactUsController::class, 'index'])->name('contact');
+Route::post('/contact-send', [ContactUsController::class, 'store'])->name('contact-send');
+
+
+
 
 
 Route::get('/testlang',[TestController::class, 'showData']);

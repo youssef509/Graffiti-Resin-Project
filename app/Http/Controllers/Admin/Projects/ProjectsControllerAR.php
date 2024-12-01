@@ -52,8 +52,8 @@ class ProjectsControllerAR extends Controller
 
     public function edit($id) {
         $categories = Category::all();
-        $ProjectImages = ProjectImages::all();
         $projectsFromDB = ProjectsAr::where('id', $id)->first();
+        $ProjectImages = ProjectImages::where('project_name', $projectsFromDB->project_name)->get();
         return view('backend.projects.projects-edit', ['categories' => $categories, 'project' => $projectsFromDB, 'ProjectImages' => $ProjectImages]);
 
     }

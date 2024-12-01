@@ -24,46 +24,16 @@
             </div>
             <div class="col-lg-10 col-sm-12 m-auto">
                 <div class="instrument-slider owl-carousel">
+                    @foreach($projectsData as $projects)
                     <div class="slider-item">
                         <div class="image">
-                            <img src="frontend/assets/img/instruments/instrument-img-1.jpg" alt="Demo Image">
+                            <img src="{{$projects->image_url}}" alt="Main Image">
                         </div>
                         <div class="overlay-content">
-                            <h3><a href="projects-details.html">CE400-8 <br> Excavator</a></h3>
+                            <h3><a href="{{route('projects-show', $projects->id)}}">{{$projects->project_name}}</a></h3>
                         </div>
                     </div>
-                    <div class="slider-item">
-                        <div class="image">
-                            <img src="frontend/assets/img/instruments/instrument-img-2.jpg" alt="Demo Image">
-                        </div>
-                        <div class="overlay-content">
-                            <h3><a href="projects-details.html">TE786-1 <br> Excavator</a></h3>
-                        </div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="image">
-                            <img src="frontend/assets/img/instruments/instrument-img-3.jpg" alt="Demo Image">
-                        </div>
-                        <div class="overlay-content">
-                            <h3><a href="projects-details.html">90400-E <br> Excavator</a></h3>
-                        </div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="image">
-                            <img src="frontend/assets/img/instruments/instrument-img-4.jpg" alt="Demo Image">
-                        </div>
-                        <div class="overlay-content">
-                            <h3><a href="projects-details.html">BX900-8 <br> Excavator</a></h3>
-                        </div>
-                    </div>
-                    <div class="slider-item">
-                        <div class="image">
-                            <img src="frontend/assets/img/instruments/instrument-img-5.jpg" alt="Demo Image">
-                        </div>
-                        <div class="overlay-content">
-                            <h3><a href="projects-details.html">TX900-8 <br> Excavator</a></h3>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

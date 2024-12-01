@@ -4,26 +4,26 @@
         <div class="row justify-content-center">
             <div class="col-lg-3">
                 <div class="content">
-                    <h2><span class="counter">25</span>+</h2>
-                    <span>Years of Experience</span>
+                    <h2><span class="counter">10</span>+</h2>
+                    <span>@lang('messages.YearsofExperience')</span>
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="content">
-                    <h2><span class="counter">500</span>+</h2>
-                    <span>Happy Clients</span>
+                    <h2><span class="counter">55K</span>+</h2>
+                    <span>@lang('messages.Clients')</span>
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="content">
-                    <h2><span class="counter">250</span>+</h2>
-                    <span>Work Employed</span>
+                    <h2><span class="counter">100</span>+</h2>
+                    <span>@lang('messages.Employed')</span>
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="content">
-                    <h2><span class="counter">159</span>+</h2>
-                    <span>Project Completed</span>
+                    <h2><span class="counter">148</span>+</h2>
+                    <span>@lang('messages.ProjectCompleted')</span>
                 </div>
             </div>
         </div>

@@ -47,7 +47,7 @@
                                 @endif
                                 <div class="tab-content p-3 text-muted">
                                     <div class="tab-pane active" id="arabic-1" role="tabpanel">
-                                        <form method="POST" action="{{route('admin.products-store-En')}}"  enctype="multipart/form-data">
+                                        <form method="POST" action="{{route('admin.products-store-Ar')}}"  enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-lg-6">

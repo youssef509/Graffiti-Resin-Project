@@ -2357,7 +2357,7 @@ textarea.form-control {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background: url(../img/testimonial-bg.jpg) no-repeat top;
+  background: url(../img/testimonial.jpg) no-repeat top;
 }
 .testimonial-section::after {
   position: absolute;
@@ -2626,7 +2626,7 @@ textarea.form-control {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  background: url(../img/service-bg-1.jpg) no-repeat center;
+  background: url(../img/partiners.jpg) no-repeat center;
   background-size: cover;
 }
 .partner-two::after {
@@ -2657,7 +2657,7 @@ textarea.form-control {
 ----------------------------------------- */
 .newsletter-section, .newsletter-section.newsletter-three {
   position: relative;
-  background: url(../img/newsletter-bg-1.jpg) no-repeat center;
+  background: url(../img/newsletter.jpg) no-repeat center;
   background-size: cover;
   background-position: top;
   z-index: 1;
@@ -2770,7 +2770,7 @@ textarea.form-control {
 .newsletter-section.newsletter-two .content-container {
   position: relative;
   z-index: 1;
-  background: url(../img/newsletter-bg-2.jpg) no-repeat center;
+  background: url(../img/newsletter.jpg) no-repeat center;
   position: relative;
   background-size: cover;
 }
@@ -4052,12 +4052,12 @@ textarea.form-control {
 ----------------------------------------- */
 .member-details-section .image {
   height: 100%;
-  background: url(../img/team/team-img-3.jpg) no-repeat center;
+  /* background: url(../img/team/team-img-3.jpg) no-repeat center; */
   background-size: cover;
 }
 @media screen and (min-width: 767px) {
   .member-details-section .image img {
-    opacity: 0;
+    /* opacity: 0; */
   }
 }
 @media screen and (max-width: 767px) {
@@ -4923,18 +4923,18 @@ textarea.form-control {
   position: relative;
   padding: 50px 16px;
   margin-bottom: 20px;
-  background: url(../img/item-bg-2.jpg) no-repeat center;
+  background: url(../img/newsletter.jpg) no-repeat center;
   background-size: cover;
   align-items: center;
   justify-content: center;
   z-index: 1;
 }
 .contact-area .contact-info .info-item:first-child {
-  background: url(../img/item-bg-1.jpg) no-repeat center;
+  background: url(../img/newsletter.jpg) no-repeat center;
   background-size: cover;
 }
 .contact-area .contact-info .info-item:last-child {
-  background: url(../img/item-bg-3.jpg) no-repeat center;
+  background: url(../img/newsletter.jpg) no-repeat center;
   background-size: cover;
 }
 .contact-area .contact-info .info-item::after {
