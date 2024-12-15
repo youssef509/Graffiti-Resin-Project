@@ -33,7 +33,7 @@ class AuthorizedDistributorController extends Controller
 
 
             // Send the email to the admin
-            Mail::to('youssef201.dev@gmail.com')->send(new AuthorizedDistributorMail($data->toArray()));
+            Mail::to('Tayeob@hotmail.com')->send(new AuthorizedDistributorMail($data->toArray()));
             return redirect()->back()->with('success', __('messages.successmessage'))->withInput();
 
         } catch (\Exception $e) {

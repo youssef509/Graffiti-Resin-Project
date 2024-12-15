@@ -30,7 +30,7 @@ class TrainingSupervisionController extends Controller
                 'reason' => request()->reason,
             ]);
             // Send the email to the admin
-            Mail::to('youssef201.dev@gmail.com')->send(new TrainingSupervisionMail($data->toArray()));
+            Mail::to('Tayeob@hotmail.com')->send(new TrainingSupervisionMail($data->toArray()));
             return redirect()->back()->with('success', __('messages.successmessage'))->withInput();
         } catch (\Exception $e) {
             // Log error and redirect with error message

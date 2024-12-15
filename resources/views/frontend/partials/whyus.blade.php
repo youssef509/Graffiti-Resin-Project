@@ -15,7 +15,7 @@
             </div>
             <div class="col-lg-5 col-sm-12 col-md-12">
                 <div class="instrument-content">
-                    <h2><span>Instrument</span> That We Use</h2>
+                    <h2>@lang('messages.whyUsHome')<span> @lang('messages.AboutCompany')</span></h2>
                     <h3>{{$whyus->title1}}</h3>
                     <p>{{$whyus->text1}}</p>
                     <h3>{{$whyus->title2}}</h3>

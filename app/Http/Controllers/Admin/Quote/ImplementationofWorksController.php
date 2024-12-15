@@ -50,7 +50,7 @@ class ImplementationofWorksController extends Controller
             ]);
 
             // Send the email to the admin
-            Mail::to('youssef201.dev@gmail.com')->send(new ImplementationofWorksMail($data->toArray()));
+            Mail::to('Tayeob@hotmail.com')->send(new ImplementationofWorksMail($data->toArray()));
 
             // Redirect with success message
             return redirect()->back()->with('success', __('messages.successmessage'))->withInput();

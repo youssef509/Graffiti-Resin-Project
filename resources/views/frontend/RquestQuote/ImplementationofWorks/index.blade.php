@@ -212,7 +212,7 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d109139.63581471992!2d44.64544146193563!3d24.052781627007636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f079c19b984d1%3A0x3894d7bd038e9542!2sGraffiti%20Resin%20Company!5e1!3m2!1sen!2str!4v1733016316909!5m2!1sen!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3493.7951314209236!2d46.69741437536441!3d24.658376678061785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM5JzMwLjIiTiA0NsKwNDEnNjAuMCJF!5e1!3m2!1sen!2str!4v1734246754488!5m2!1sen!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

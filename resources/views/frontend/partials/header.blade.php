@@ -47,32 +47,27 @@
             <div class="container">
                 <div class="constik-responsive-menu">
                     <div class="logo">
-                        <a href="index.html">
-                            <img src={{ asset("frontend/assets/img/gd-logo.png")}} class="logo1" alt="logo">
-                            <img src={{ asset("frontend/assets/img/gd-logo.png")}} class="logo2" alt="logo">
+                        <a href="{{route('home')}}">
+                            <img src={{ asset("frontend/assets/img/gd.png")}} class="logo1" alt="logo">
+                            <img src={{ asset("frontend/assets/img/gd.png")}} class="logo2" alt="logo">
                         </a>
                     </div>
                     <div class="side-option-responsive">
-                        <div class="item">
-                            <div class="language">
-                                <a href="#language" class="language-link">
-                                    @lang('messages.Languages') <i class="fas fa-sort-down"></i></a>
-                                    <ul class="menu">
-                                        <li class="menu-item">
-                                            <a href="locale/en" class="menu-link {{ app()->getLocale() === 'en' ? 'active' : '' }}">
-                                                <img src={{ asset("frontend/assets/img/flag-uk.png")}} alt="flag"> English
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="locale/ar" class="menu-link {{ app()->getLocale() === 'ar' ? 'active' : '' }}">
-                                                <img src={{ asset("frontend/assets/img/flag-jordan.png")}} alt="flag"> العربية
-                                            </a>
-                                        </li>
-                                    </ul>
-                            </div>
+                        <div class="language">
+                            <a href="#language" class="language-link"><i class="fa-solid fa-globe"></i></a>
+                            <ul class="menu">
+                                <li class="menu-item">
+                                    <a href="locale/en" class="menu-link {{ app()->getLocale() === 'en' ? 'active' : '' }}">
+                                        <img src={{ asset("frontend/assets/img/flag-uk.png")}} alt="flag"> English
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="locale/ar" class="menu-link {{ app()->getLocale() === 'ar' ? 'active' : '' }}">
+                                        <img src={{ asset("frontend/assets/img/sa.png")}} alt="flag"> العربية
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-    
-                        
                     </div>
                 </div>
             </div>
@@ -113,7 +108,25 @@
                             <li class="nav-item">
                                 <a href="{{route('contact')}}" class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">@lang('messages.Contact')</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link toggle">@lang('messages.ContactAsk')</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="{{route('quote.authorizedDistributor')}}" class="nav-link">@lang('messages.authorizeddistributor')</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('quote.index')}}" class="nav-link">@lang('messages.Trainingandsupervision')</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('quote.PurchasingMaterials')}}" class="nav-link">@lang('messages.purchasingmaterials')</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('quote.implementationOfWorks')}}" class="nav-link">@lang('messages.implementationofworks')</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
+                        
 
                         <div class="side-option ml-auto">
                             <div class="item">
@@ -130,7 +143,7 @@
                                         </li>
                                         <li class="menu-item">
                                             <a href="{{ url('/locale/ar') }}" class="menu-link {{ app()->getLocale() === 'ar' ? 'active' : '' }}">
-                                                <img src={{ asset("frontend/assets/img/flag-jordan.png")}} alt="flag"> العربية
+                                                <img src={{ asset("frontend/assets/img/sa.png")}} alt="flag"> العربية
                                             </a>
                                         </li>
                                     </ul>

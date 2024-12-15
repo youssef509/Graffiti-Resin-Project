@@ -12,16 +12,16 @@
                             </div>
                             <div class="about-fact">
                                 <div class="content">
-                                    <h4>85+ Clients</h4>
-                                    <span>Satisfied By Us</span>
+                                    <h4>148+</h4>
+                                    <span>@lang('messages.ProjectCompleted')</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 pl-0">
                             <div class="about-fact ml-auto">
                                 <div class="content">
-                                    <h4>25+ Years</h4>
-                                    <span>Of Experience</span>
+                                    <h4>10+</h4>
+                                    <span>@lang('messages.YearsofExperience')</span>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="col-lg-5">
                 <div class="about-content">
-                    <h2>@lang('messages.HomeAboutUs')</span></h2>
+                    <h2>@lang('messages.HomeAboutUs')<span> @lang('messages.AboutCompany')</span></h2>
                     <p>{{$homeabout->text1}}.</p>
                     <p>{{$homeabout->text2}}</p>
                     <div class="about-item-list">
@@ -46,7 +46,7 @@
                         </ul>
                     </div>
                     <div class="cta-btn">
-                        <a href="about-us.html" class="primary-btn">Explore About Us</a>
+                        <a href="{{route('about-us')}}" class="primary-btn">@lang('messages.About')</a>
                     </div>
                 </div>
             </div>
