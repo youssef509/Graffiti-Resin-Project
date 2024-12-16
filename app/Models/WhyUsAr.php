@@ -15,7 +15,7 @@ class WhyUsAr extends Model
         'image'
     ];
     // Specify the table name explicitly
-    protected $table = 'Ar_whyus';
+    protected $table = 'ar_whyus';
 
     public function getImageUrlAttribute()
     {

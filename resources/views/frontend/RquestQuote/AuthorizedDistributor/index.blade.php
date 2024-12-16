@@ -49,7 +49,7 @@
                             <i class='flaticon-address'></i> 
                             <div class="info-content">
                                 <p>@lang('messages.visitus')</p>
-                                <a href="#">32,Wales Street,USA</a>
+                                <a href="#">@lang('messages.address')</a>
                             </div>
                         </div>
                     </div>

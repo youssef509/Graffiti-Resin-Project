@@ -13,5 +13,5 @@ class AboutusEn extends Model
     ];
 
     // Specify the table name explicitly
-    protected $table = 'En_aboutus';
+    protected $table = 'en_aboutus';
 }

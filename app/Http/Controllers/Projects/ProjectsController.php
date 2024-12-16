@@ -36,6 +36,7 @@ class ProjectsController extends Controller
     }
 
     public function show($id) {
+        $conversions_api = ConversionsAPI::all();
         $projectData = LanguageHelper::getModel('Projects')->where('id', $id)->first();
         $category = Category::where('id', $projectData->project_category)->first();
         $projectsImages = ProjectImages::where('project_name', $projectData->project_name)->get();
@@ -48,6 +49,7 @@ class ProjectsController extends Controller
         // Pass data to the view
         return view('frontend.Projects.project-details', 
             compact(
+                'conversions_api',
                 'projectData',
                 'category',
                 'projectsImages',

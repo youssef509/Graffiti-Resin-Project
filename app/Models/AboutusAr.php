@@ -13,5 +13,5 @@ class AboutusAr extends Model
     ];
 
     // Specify the table name explicitly
-    protected $table = 'Ar_aboutus';
+    protected $table = 'ar_aboutus';
 }

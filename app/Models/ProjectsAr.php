@@ -18,7 +18,7 @@ class ProjectsAr extends Model
     ];
 
     // Specify the table name explicitly
-    protected $table = 'Ar_projects';
+    protected $table = 'ar_projects';
 
     public function getImageUrlAttribute()
     {

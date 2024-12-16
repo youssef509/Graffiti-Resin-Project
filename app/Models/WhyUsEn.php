@@ -15,7 +15,7 @@ class WhyUsEn extends Model
         'image'
     ];
     // Specify the table name explicitly
-    protected $table = 'En_whyus';
+    protected $table = 'en_whyus';
 
     public function getImageUrlAttribute()
     {

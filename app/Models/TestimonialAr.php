@@ -13,7 +13,7 @@ class TestimonialAr extends Model
         'image'
     ];
     // Specify the table name explicitly
-    protected $table = 'Ar_testimonial';
+    protected $table = 'ar_testimonial';
 
     public function getImageUrlAttribute()
     {

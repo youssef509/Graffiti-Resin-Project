@@ -18,7 +18,7 @@ class HomeAboutEn extends Model
     ];
 
     // Specify the table name explicitly
-    protected $table = 'En_homeabout';
+    protected $table = 'en_homeabout';
 
     public function getImageUrlAttribute()
     {

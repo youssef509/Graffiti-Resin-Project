@@ -144,7 +144,7 @@
                         <ul class="contact-info">
                             <li class="content">
                                 <span class="tag">A</span>
-                                <span>32, Wales Street, <br> New York, USA</span>
+                                <span>@lang('messages.address')</span>
                             </li>
                             @foreach($contactData as $contact)
                             <li class="content">

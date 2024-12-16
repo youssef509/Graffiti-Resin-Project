@@ -18,7 +18,7 @@ class ProjectsEn extends Model
     ];
 
     // Specify the table name explicitly
-    protected $table = 'En_projects';
+    protected $table = 'en_projects';
 
     public function getImageUrlAttribute()
     {

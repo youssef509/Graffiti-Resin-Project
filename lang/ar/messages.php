@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "address" => "Saudi Arabia. Riyadh",
     "yes" => "نعم",
     "no"  => "لا",
     "Home" => "الرئيسية",

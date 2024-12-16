@@ -15,7 +15,7 @@ class SliderAr extends Model
     ];
 
     // Specify the table name explicitly
-    protected $table = 'Ar_slider';
+    protected $table = 'ar_slider';
 
     public function getImageUrlAttribute()
     {
